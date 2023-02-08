@@ -1,0 +1,12 @@
+version: "2.4"
+services:
+  vibrio-detector:
+    container_name: vibrio-detector
+    image: "vibrio-detector:1.0.0"
+    restart: unless-stopped
+    ipc: host
+    ulimits:
+      memlock: -1
+      stack: 67108864
+    ports:
+      - "8501:8501"
